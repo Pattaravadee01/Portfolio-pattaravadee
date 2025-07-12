@@ -1,0 +1,799 @@
+/* Global */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    transition: all 0.3s ease;
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #faffff;
+    color: #333;
+}
+
+.container {
+    max-width: 1140px;
+    margin: 0 auto;
+    padding-top: 20px;  /* เพิ่มช่องว่างด้านบน */
+    object-fit: cover;
+    
+}
+
+
+
+
+/* Navbar */
+nav {
+    width: 100%;
+    padding: 1rem;
+    background-color: #a0f8ff;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+@keyframes slideDownText {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.logo a {
+    display: inline-block;
+    font-size: 2rem;
+    color: rgb(29, 124, 207);
+    text-decoration: none;
+    animation: slideDownText 1s ease-out forwards;
+    opacity: 0;
+}
+
+.logo a:hover {
+    animation: shake 0.4s;
+    color: #ff6600;
+}
+
+@keyframes shake {
+    0% { transform: translateX(0); }
+    25% { transform: translateX(-3px); }
+    50% { transform: translateX(3px); }
+    75% { transform: translateX(-3px); }
+    100% { transform: translateX(0); }
+}
+
+.nav-con {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.menu {
+    display: flex;
+    list-style: none;
+    align-items: center;
+}
+
+.menu li {
+    margin: 0 1rem;
+}
+
+.menu li a {
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.menu li a:hover {
+    color: #ff6600;
+}
+
+/* Home Section */
+.maincontain {
+    background-color: #ffef85;
+    padding: 2rem 0;
+}
+
+.maincontain-img img {
+  width: 400px;
+  height: 400px;  /* ให้เท่ากับความกว้าง */
+  border-radius: 50%;
+  object-fit: cover; /* ครอบภาพให้เต็มวงกลมโดยไม่เสียสัดส่วน */
+}
+
+.maincontain-com {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-100px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.maincontain-info {
+    width: 100%;
+    max-width: 600px;
+    padding: 2rem;
+    opacity: 0;
+    animation: slideInLeft 1s ease-out forwards;
+}
+
+.maincontain-info h3 {
+    font-size: 2.5rem;
+    color: #333;
+}
+
+.maincontain-info p {
+    margin: 1rem 0;
+    font-size: 1.1rem;
+}
+
+.maincontain-info .maincontain-btn {
+    background-color: hwb(39 31% 0%);
+    color: white;
+    padding: 1rem 2rem;
+    text-decoration: none;
+    display: inline-block;
+    margin-top: 20px;
+    border-radius: 25px;
+    font-weight: bold;
+    transition: transform 0.3s, background-color 0.3s;
+}
+
+.maincontain-info .maincontain-btn:hover {
+    transform: scale(1.05);
+    background-color: #ff9900;
+}
+
+@keyframes fadeInRight {
+    from {
+        opacity: 0;
+        transform: translateX(100px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.maincontain-img {
+    width: 100%;
+    max-width: 400px;
+    padding: 1rem;
+    animation: fadeInRight 1s ease-out forwards;
+    opacity: 0;
+}
+
+/* Skills / Content Section */
+.contact-section {
+  background: #f0fff6;
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.section-title {
+  font-size: 2.5rem;
+  color: #333;
+  margin-bottom: 1rem;
+}
+
+.contact-intro {
+  color: #666;
+  font-size: 1rem;
+  margin-bottom: 2rem;
+}
+
+.contact-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+.contact-card {
+  background-color: #faef96;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 20px;
+  width: 250px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+}
+
+.contact-card:hover {
+  transform: translateY(-10px);
+}
+
+.contact-card i {
+  font-size: 2rem;
+  color: #3498db;
+  margin-bottom: 10px;
+}
+
+.contact-card h4 {
+  margin: 0.5rem 0;
+  font-size: 1.2rem;
+  color: #222;
+}
+
+.contact-card p {
+  margin: 0;
+  color: #555;
+}
+
+.contact-card a {
+  color: #3498db;
+  text-decoration: none;
+}
+
+.footer-bottom {
+  background-color: #333;
+  color: #fff;
+  padding: 20px 0;
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+
+.footer-top-con {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.footer-top-item-con {
+    display: flex;
+    margin: 1rem 0;
+}
+
+.footer-top-item {
+    opacity: 0;
+    animation: fadeUp 1s ease-out forwards;
+    text-align: left; /* ชิดซ้าย */
+    border: 2px solid #ccc; /* เส้นกรอบ */
+    padding: 20px; /* ระยะห่างด้านใน */
+    border-radius: 10px; /* มุมโค้ง */
+    background-color: #f9f9f9; /* สีพื้นหลัง (ถ้าอยากให้ดูโดดออกมา) */
+    color: #06070b;
+    max-width: 400px; /* ความกว้างสูงสุด */
+    margin: 0 auto; /* จัดให้อยู่ตรงกลางของ container */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* เงาอ่อนๆ */
+    margin-bottom: 12px; /* ระยะห่างระหว่างแต่ละ <p> */
+    line-height: 1.6; /* ระยะห่างบรรทัดในแต่ละข้อความ */
+}
+
+.footer-top-item:nth-child(1) { animation-delay: 0.3s; }
+.footer-top-item:nth-child(2) { animation-delay: 0.5s; }
+.footer-top-item:nth-child(3) { animation-delay: 0.7s; }
+
+.footer-top-item:nth-child(2) {
+    max-width: 500px; /* ความกว้างสูงสุดของกล่อง */
+    margin: 0 auto; /* จัดให้อยู่ตรงกลาง */
+    padding: 20px; /* ระยะห่างด้านใน */
+    border: 2px solid #2461db; /* เส้นกรอบ */
+    border-radius: 10px; /* มุมโค้ง */
+    background-color: #f9f9f9; /* สีพื้นหลัง */
+    text-align: left; /* เนื้อหาภายในชิดซ้าย */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* เงา */
+}
+
+.footer-right {
+    margin-left: auto;
+    width: fit-content;
+}
+
+h4 {
+    white-space: nowrap;
+    margin-bottom: 0.5rem;
+}
+
+.footer-top-item:nth-child(2) h4,
+.footer-top-item:nth-child(3) h4 {
+    margin-bottom: 1rem;
+}
+
+.footer-button {
+    background-color: rgb(255, 233, 203);
+    padding: 1rem;
+    text-align: center;
+    font-weight: 500;
+    font-size: 1rem;
+    transition: background-color 0.3s;
+}
+
+.footer-button:hover {
+    background-color: #ffd59e;
+}
+
+#aboutme .container {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+  align-items: flex-start;
+}
+
+
+/* รูปเลื่อนเข้าจากซ้าย */
+.aboutme-img {
+  width: 300px;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 50%;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+  animation: floatUpDown 3s ease-in-out infinite;
+
+  margin-top: 270px; /* ✅ เพิ่มบรรทัดนี้ */
+}
+
+
+@keyframes floatUpDown {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-15px); /* ขยับขึ้น 15px */
+  }
+}
+
+
+/* ข้อความเลื่อนเข้าจากขวา */
+.aboutme-text {
+  flex: 1;
+  opacity: 0;
+  animation: slideInRight 1s forwards;
+  animation-delay: 0.5s; /* หน่วงเวลาข้อความให้ตามหลังรูป */
+
+}
+
+.aboutme-text h1{
+    font-size: 2.5rem;
+    padding-top: 1rem;
+}
+
+/* กำหนดอนิเมชั่นให้แต่ละ <p> ในข้อความไล่ทีละบรรทัด */
+.aboutme-text p {
+  margin-bottom: 1rem;
+  line-height: 1.6;
+  opacity: 0;
+  transform: translateX(50px);
+  animation: fadeSlideIn 0.6s forwards;
+}
+
+/* ไล่ดีเลย์ให้แต่ละย่อหน้าทีละ 0.3 วินาที */
+.aboutme-text p:nth-child(1) { animation-delay: 1s; }
+.aboutme-text p:nth-child(2) { animation-delay: 1.3s; }
+.aboutme-text p:nth-child(3) { animation-delay: 1.6s; }
+.aboutme-text p:nth-child(4) { animation-delay: 1.9s; }
+
+/* Keyframes */
+@keyframes slideInLeft {
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+}
+
+@keyframes slideInRight {
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+}
+
+@keyframes fadeSlideIn {
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+}
+
+section, #contact {
+  min-height: 100vh; /* หรือ height: 100vh; */
+  /* ถ้าอยากให้เนื้อหาอยู่กลางจอ */
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* จัดกึ่งกลางแนวตั้ง */
+  padding: 2rem;
+  box-sizing: border-box;
+}
+
+.interests-hobbies-wrapper {
+  display: flex;
+  gap: 1rem;             /* ช่องว่างระหว่างกล่อง */
+  justify-content: flex-start; /* ชิดซ้าย */
+  flex-wrap: wrap;       /* รองรับหน้าจอเล็กให้พับบรรทัดได้ */
+  margin-top: 1rem;
+}
+
+.interests-box,
+.hobbies-box {
+  background-color: #f0f4ff;
+  border: 2px solid #4b6cb7;
+  padding: 0rem;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  width: 300px;          /* กำหนดความกว้างเท่ากัน */
+  text-align: left;
+}
+
+.left-column h1 {
+  font-size: 2.5rem;
+  margin: 0 1rem;
+}
+
+.about-flex-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.about-left,
+.about-right {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #4b6cb7;
+}
+
+.typewriter {
+  display: inline-block;
+  overflow: hidden;
+  border-right: 3px solid black;
+  white-space: nowrap;
+  animation:
+    typing 5s steps(60, end) infinite,
+    blink-caret 0.75s step-end infinite;
+  font-family: monospace;
+  font-size: 1.5rem;
+}
+
+@keyframes typing {
+  0%   { width: 0; }
+  50%  { width: 100%; }
+  100% { width: 0; }
+}
+
+@keyframes blink-caret {
+  from, to { border-color: transparent; }
+  50%      { border-color: black; }
+}
+
+.skills-section {
+    width: 100vw;              /* กว้างเต็มจอ */
+    overflow-x: hidden;        /* ป้องกัน scroll แนวนอน */
+    padding: 40px 0;
+    background: #e7f9ff;       /* สีพื้นหลังของกรอบ */
+}
+
+.skills-border {
+  background-color: #2c468e;
+  border: 1.5px solid #b0d7ff;
+  border-radius: 15px;
+  padding: 2rem;
+  width: 100%;
+  max-width: 480px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease;
+}
+
+.skills-border:hover {
+  transform: translateY(-6px);
+}
+
+.skills-section h2 {
+    text-align: center;
+    color: #ffec44;
+    margin-bottom: 30px;
+    font-size: 32px;
+}
+
+.skills-list li {
+  display: flex;
+  align-items: center;
+  gap: 10px; /* ระยะห่างระหว่างรูปกับข้อความ */
+  margin-bottom: 1rem;
+  font-size: 1.1rem;
+}
+
+.skill-icon {
+  width: 36px;
+  height: 36px;
+  object-fit: contain;
+}
+
+
+.skills-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  list-style: none;
+  padding: 0;
+  margin-top: 1rem;
+}
+
+.skills-list li {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  background-color: #eef6ff;
+  padding: 0.75rem 1rem;
+  border-radius: 12px;
+  transition: background-color 0.3s;
+}
+
+.skills-list li:hover {
+  background-color: #dbefff;
+}
+
+.skill-icon {
+  width: 32px;
+  height: 32px;
+  object-fit: contain;
+}
+
+
+
+/* ใส่ใน <style> หรือ aboutme.css */
+.floating-img {
+  border-radius: 50%;
+  border: 5px solid #ffffff;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  animation: float 1.5s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%   { transform: translateY(0); }
+  50%  { transform: translateY(-10px); }
+  100% { transform: translateY(0); }
+}
+
+.mac-dots {
+  display: flex;
+  justify-content: flex-start; /* ชี้ซ้าย */
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+  padding-top: 0.5rem;
+}
+
+.mac-dots .dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  display: inline-block;
+  transition: transform 0.2s;
+}
+
+.mac-dots .dot:hover {
+  transform: scale(1.2);
+}
+
+.mac-dots .red {
+  background-color: #ff5f57;
+}
+
+.mac-dots .yellow {
+  background-color: #ffbd2e;
+}
+
+.mac-dots .green {
+  background-color: #28c840;
+}
+
+/* เพิ่มในไฟล์ aboutme.css */
+.section-fade {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all 0.8s ease;
+}
+
+.section-fade.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* เริ่มซ่อนไว้ */
+.reveal {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all 1s ease;
+}
+
+/* เมื่อ scroll ถึง */
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.enhanced-aboutme {
+  padding: 2rem;
+  background: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+  animation: fadeUp 1s ease-out forwards;
+  opacity: 0;
+}
+
+.enhanced-aboutme p {
+  font-size: 1rem;
+  color: #444;
+  line-height: 1.7;
+  margin-bottom: 1rem;
+  opacity: 0;
+  transform: translateX(40px);
+  animation: fadeSlideIn 0.8s forwards;
+}
+
+.enhanced-aboutme p:nth-child(2) { animation-delay: 0.2s; }
+.enhanced-aboutme p:nth-child(3) { animation-delay: 0.4s; }
+.enhanced-aboutme p:nth-child(4) { animation-delay: 0.6s; }
+.enhanced-aboutme p:nth-child(5) { animation-delay: 0.8s; }
+.enhanced-aboutme p:nth-child(6) { animation-delay: 1s; }
+
+.aboutme-title {
+  font-size: 2.5rem;
+  color: #2c3e50;
+  margin-bottom: 1.5rem;
+  animation: slideInRight 1s ease-out forwards;
+  opacity: 0;
+}
+
+.interest-hobby-box {
+  margin-top: 2rem;
+}
+
+.interest-hobby-box h3 {
+  font-size: 1.5rem;
+  color: #0069d9;
+  margin-bottom: 1rem;
+}
+
+.interest-hobby-list {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.ih-card {
+  background-color: #e3f2fd;
+  border: 2px solid #90caf9;
+  border-radius: 20px;
+  padding: 1rem 1.2rem;
+  flex: 1 1 calc(33% - 1rem);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  transition: transform 0.3s ease, background-color 0.3s;
+}
+
+.ih-card:hover {
+  transform: translateY(-5px);
+  background-color: #d0ebff;
+}
+
+/* Animation */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeSlideIn {
+  from { opacity: 0; transform: translateX(50px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+.project-section {
+  background-color: #f8f0ff;
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.project-container {
+  max-width: 1200px;
+  margin: auto;
+}
+
+.section-title {
+  font-size: 2.5em;
+  margin-bottom: 40px;
+  color: #4b0082;
+}
+
+.project-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: center;
+}
+.project-card {
+  background-color: #fff;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  width: 100%;
+  max-width: 350px;     /* ความกว้างกล่อง */
+  margin: 20px auto;
+  box-sizing: border-box;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+
+
+.project-card img {
+  width: 100%;
+  height: 200px;         /* ให้ความสูงปรับตามขนาดจริง */
+  max-height: 300px;    /* ปรับได้ตามความต้องการ */
+  object-fit: contain;  /* ให้แสดงทั้งภาพแบบไม่ตัด */
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+
+
+
+.project-card h3 {
+  margin: 10px 0;
+  color: #5a189a;
+}
+
+.project-card:hover {
+  transform: scale(1.02);
+}
+
+/* Animation */
+.slide-up {
+  animation: slideUp 1s forwards;
+}
+
+.slide-up.delay {
+  animation-delay: 0.3s;
+}
+
+.slide-up.delay2 {
+  animation-delay: 0.6s;
+}
+
+@keyframes slideUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+#home,
+#aboutme,
+#skills,
+#project,
+#contact {
+  scroll-margin-top: 100px;
+}
