@@ -414,6 +414,7 @@ h4 {
   }
 }
 
+
 section, #contact {
   min-height: 100vh; /* หรือ height: 100vh; */
   /* ถ้าอยากให้เนื้อหาอยู่กลางจอ */
@@ -796,3 +797,59 @@ section, #contact {
   scroll-margin-top: 100px;
 }
 
+.orbit-wrapper {
+  position: relative;
+  width: 300px;
+  height: 300px;
+  margin: auto;
+}
+
+.orbit-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 250px;    /* รูปใหญ่ขึ้น */
+  height: 250px;
+  transform: translate(-50%, -50%);
+  z-index: 5;      /* ลด z-index ไม่ให้บัง */
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.orbit-center img {
+  border-radius: 50%;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* วงโคจรของโลโก้ */
+.orbit {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 40px;
+  height: 40px;
+  margin: -20px 0 0 -20px; /* กึ่งกลางกล่อง */
+  animation: rotate 10s linear infinite;
+}
+
+.orbit img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  border-radius: 50%;
+}
+
+/* กำหนดตำแหน่งแต่ละโลโก้บนวงโคจร ปรับ translateX เป็น 160px */
+.orbit1 { transform: rotate(0deg) translateX(160px) rotate(0deg); animation-delay: 0s; }
+.orbit2 { transform: rotate(72deg) translateX(160px) rotate(-72deg); animation-delay: -2s; }
+.orbit3 { transform: rotate(144deg) translateX(160px) rotate(-144deg); animation-delay: -4s; }
+.orbit4 { transform: rotate(216deg) translateX(160px) rotate(-216deg); animation-delay: -6s; }
+.orbit5 { transform: rotate(288deg) translateX(160px) rotate(-288deg); animation-delay: -8s; }
+
+/* หมุนวงโคจร ปรับ translateX เป็น 160px */
+@keyframes rotate {
+  from { transform: rotate(0deg) translateX(160px) rotate(0deg); }
+  to { transform: rotate(360deg) translateX(160px) rotate(-360deg); }
+}
