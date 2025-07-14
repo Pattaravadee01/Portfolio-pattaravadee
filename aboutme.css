@@ -264,17 +264,17 @@ nav {
 .footer-top-item {
     opacity: 0;
     animation: fadeUp 1s ease-out forwards;
-    text-align: left; /* ชิดซ้าย */
-    border: 2px solid #ccc; /* เส้นกรอบ */
-    padding: 20px; /* ระยะห่างด้านใน */
-    border-radius: 10px; /* มุมโค้ง */
-    background-color: #f9f9f9; /* สีพื้นหลัง (ถ้าอยากให้ดูโดดออกมา) */
+    text-align: left; 
+    border: 2px solid #ccc; 
+    padding: 20px; 
+    border-radius: 10px; 
+    background-color: #f9f9f9; 
     color: #06070b;
-    max-width: 400px; /* ความกว้างสูงสุด */
-    margin: 0 auto; /* จัดให้อยู่ตรงกลางของ container */
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* เงาอ่อนๆ */
-    margin-bottom: 12px; /* ระยะห่างระหว่างแต่ละ <p> */
-    line-height: 1.6; /* ระยะห่างบรรทัดในแต่ละข้อความ */
+    max-width: 400px;
+    margin: 0 auto; 
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); 
+    margin-bottom: 12px; 
+    line-height: 1.6; 
 }
 
 .footer-top-item:nth-child(1) { animation-delay: 0.3s; }
@@ -282,14 +282,14 @@ nav {
 .footer-top-item:nth-child(3) { animation-delay: 0.7s; }
 
 .footer-top-item:nth-child(2) {
-    max-width: 500px; /* ความกว้างสูงสุดของกล่อง */
-    margin: 0 auto; /* จัดให้อยู่ตรงกลาง */
-    padding: 20px; /* ระยะห่างด้านใน */
-    border: 2px solid #2461db; /* เส้นกรอบ */
-    border-radius: 10px; /* มุมโค้ง */
-    background-color: #f9f9f9; /* สีพื้นหลัง */
-    text-align: left; /* เนื้อหาภายในชิดซ้าย */
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* เงา */
+    max-width: 500px; 
+    margin: 0 auto; 
+    padding: 20px;
+    border: 2px solid #2461db; 
+    border-radius: 10px; 
+    background-color: #f9f9f9; 
+    text-align: left; 
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
 .footer-right {
@@ -374,13 +374,11 @@ h4 {
   animation: fadeSlideIn 0.6s forwards;
 }
 
-/* ไล่ดีเลย์ให้แต่ละย่อหน้าทีละ 0.3 วินาที */
 .aboutme-text p:nth-child(1) { animation-delay: 1s; }
 .aboutme-text p:nth-child(2) { animation-delay: 1.3s; }
 .aboutme-text p:nth-child(3) { animation-delay: 1.6s; }
 .aboutme-text p:nth-child(4) { animation-delay: 1.9s; }
 
-/* Keyframes */
 @keyframes slideInLeft {
   to {
     opacity: 1;
@@ -416,11 +414,10 @@ h4 {
 
 
 section, #contact {
-  min-height: 100vh; /* หรือ height: 100vh; */
-  /* ถ้าอยากให้เนื้อหาอยู่กลางจอ */
+  min-height: 100vh; 
   display: flex;
   flex-direction: column;
-  justify-content: center; /* จัดกึ่งกลางแนวตั้ง */
+  justify-content: center; 
   padding: 2rem;
   box-sizing: border-box;
 }
@@ -440,7 +437,7 @@ section, #contact {
   padding: 0rem;
   border-radius: 10px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-  width: 300px;          /* กำหนดความกว้างเท่ากัน */
+  width: 300px;         
   text-align: left;
 }
 
